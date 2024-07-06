@@ -1,0 +1,92 @@
+[
+  {
+    "id": 1,
+    "image_url": "http://localhost:3000/mrRobot.jpg",
+    "name": "Mr Robot",
+    "alt": "Mr Robot",
+    "description": "A sophisticated AI designed to assist with various tasks.",
+    "created_at": "2024-01-01",
+    "category": "Robot"
+  },
+  {
+    "id": 2,
+    "image_url": "http://localhost:3000/placeholder.svg",
+    "name": "Robot 2",
+    "alt": "Robot 2",
+    "description": "A prototype robot for industrial automation.",
+    "created_at": "2024-02-01",
+    "category": "Robot"
+  },
+  {
+    "id": 3,
+    "image_url": "http://localhost:3000/placeholder.svg",
+    "name": "Robot 3",
+    "alt": "Robot 3",
+    "description": "A research robot used in academic studies.",
+    "created_at": "2024-03-01",
+    "category": "Robot"
+  },
+  {
+    "id": 4,
+    "image_url": "http://localhost:3000/placeholder.svg",
+    "name": "Robot 4",
+    "alt": "Robot 4",
+    "description": "A domestic robot for household chores.",
+    "created_at": "2024-04-01",
+    "category": "Robot"
+  },
+  {
+    "id": 5,
+    "image_url": "http://localhost:3000/placeholder.svg",
+    "name": "Robot 5",
+    "alt": "Robot 5",
+    "description": "A medical robot used for surgeries.",
+    "created_at": "2024-05-01",
+    "category": "Cyborg"
+  },
+  {
+    "id": 6,
+    "image_url": "http://localhost:3000/placeholder.svg",
+    "name": "Robot 6",
+    "alt": "Robot 6",
+    "description": "A robotic toy for children.",
+    "created_at": "2024-06-01",
+    "category": "Cyborg"
+  },
+  {
+    "id": 7,
+    "image_url": "http://localhost:3000/placeholder.svg",
+    "name": "Robot 7",
+    "alt": "Robot 7",
+    "description": "A security robot for surveillance.",
+    "created_at": "2024-07-01",
+    "category": "Automaton"
+  },
+  {
+    "id": 8,
+    "image_url": "http://localhost:3000/placeholder.svg",
+    "name": "Robot 8",
+    "alt": "Robot 8",
+    "description": "An agricultural robot for farming tasks.",
+    "created_at": "2024-08-01",
+    "category": "Automaton"
+  },
+  {
+    "id": 9,
+    "image_url": "http://localhost:3000/placeholder.svg",
+    "name": "Robot 9",
+    "alt": "Robot 9",
+    "description": "A robot designed for underwater exploration.",
+    "created_at": "2024-09-01",
+    "category": "Automaton"
+  },
+  {
+    "id": 10,
+    "image_url": "http://localhost:3000/placeholder.svg",
+    "name": "Robot 10",
+    "alt": "Robot 10",
+    "description": "A robot used for space missions.",
+    "created_at": "2024-10-01",
+    "category": "Automaton"
+  }
+]
