@@ -6,6 +6,11 @@ const nextConfig = {
         protocol: "http",
         hostname: "localhost",
       },
+      {
+        protocol: "https",
+        hostname:
+          "my-image-annotation-prpwfr3ph-garethlegranges-projects.vercel.app",
+      },
     ],
   },
 };
