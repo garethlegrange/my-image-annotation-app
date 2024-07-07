@@ -1,7 +1,7 @@
 [
   {
     "id": 1,
-    "image_url": "http://localhost:3000/mrRobot.jpg",
+    "image_url": "/mrRobot.jpg",
     "name": "Mr Robot",
     "alt": "Mr Robot",
     "description": "A sophisticated AI designed to assist with various tasks.",
@@ -10,7 +10,7 @@
   },
   {
     "id": 2,
-    "image_url": "http://localhost:3000/mrRobot.jpg",
+    "image_url": "/mrRobot.jpg",
     "name": "Robot 2",
     "alt": "Robot 2",
     "description": "A prototype robot for industrial automation.",
@@ -19,7 +19,7 @@
   },
   {
     "id": 3,
-    "image_url": "http://localhost:3000/mrRobot.jpg",
+    "image_url": "/mrRobot.jpg",
     "name": "Robot 3",
     "alt": "Robot 3",
     "description": "A research robot used in academic studies.",
@@ -28,7 +28,7 @@
   },
   {
     "id": 4,
-    "image_url": "http://localhost:3000/mrRobot.jpg",
+    "image_url": "/mrRobot.jpg",
     "name": "Robot 4",
     "alt": "Robot 4",
     "description": "A domestic robot for household chores.",
@@ -37,7 +37,7 @@
   },
   {
     "id": 5,
-    "image_url": "http://localhost:3000/mrRobot.jpg",
+    "image_url": "/mrRobot.jpg",
     "name": "Robot 5",
     "alt": "Robot 5",
     "description": "A medical robot used for surgeries.",
@@ -46,7 +46,7 @@
   },
   {
     "id": 6,
-    "image_url": "http://localhost:3000/mrRobot.jpg",
+    "image_url": "/mrRobot.jpg",
     "name": "Robot 6",
     "alt": "Robot 6",
     "description": "A robotic toy for children.",
@@ -55,7 +55,7 @@
   },
   {
     "id": 7,
-    "image_url": "http://localhost:3000/mrRobot.jpg",
+    "image_url": "/mrRobot.jpg",
     "name": "Robot 7",
     "alt": "Robot 7",
     "description": "A security robot for surveillance.",
@@ -64,7 +64,7 @@
   },
   {
     "id": 8,
-    "image_url": "http://localhost:3000/mrRobot.jpg",
+    "image_url": "/mrRobot.jpg",
     "name": "Robot 8",
     "alt": "Robot 8",
     "description": "An agricultural robot for farming tasks.",
@@ -73,7 +73,7 @@
   },
   {
     "id": 9,
-    "image_url": "http://localhost:3000/mrRobot.jpg",
+    "image_url": "/mrRobot.jpg",
     "name": "Robot 9",
     "alt": "Robot 9",
     "description": "A robot designed for underwater exploration.",

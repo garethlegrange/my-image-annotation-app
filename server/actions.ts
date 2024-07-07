@@ -6,7 +6,7 @@
 // Fetch images from the server
 export const fetchImages = async () => {
   try {
-    const response = await fetch(`http://localhost:3000/api/images`);
+    const response = await fetch(`${process.env.NEXT_PUBLIC_API_BASE_URL}/api/images`);
     return response.json();
   } catch (error) {
     throw new Error("Error fetching images");
@@ -18,7 +18,7 @@ export const fetchImages = async () => {
 // This could be used to fetch a single high resolution image by ID
 export const fetchImage = async (id: string) => {
   try {
-    const response = await fetch(`http://localhost:3000/api/images/${id}`);
+    const response = await fetch(`${process.env.NEXT_PUBLIC_API_BASE_URL}/api/images/${id}`);
     return response.json();
   } catch (error) {
     throw new Error("Error fetching image");
@@ -28,7 +28,7 @@ export const fetchImage = async (id: string) => {
 // Fetch annotations from the server
 export const fetchAnnotations = async () => {
   try {
-    const response = await fetch(`http://localhost:3000/api/annotations/`);
+    const response = await fetch(`${process.env.NEXT_PUBLIC_API_BASE_URL}/api/annotations/`);
     return response.json();
   } catch (error) {
     throw new Error("Error fetching annotations");
