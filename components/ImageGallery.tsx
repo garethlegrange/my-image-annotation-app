@@ -2,13 +2,18 @@ import type { Image } from "@/types";
 import NextImage from "next/image";
 import Link from "next/link";
 
+// Image gallery component
+// images: Array of Image objects
 export default function ImageGallery({ images }: { images: Image[] }) {
+
+  // Handle no images found
   if (!images || images.length === 0) {
     return <p>No images found</p>;
   }
 
   return (
     <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6">
+      {/* Map over the images and display them in a grid */}
       {images.map((image: Image) => (
         <Link
           key={image.id}

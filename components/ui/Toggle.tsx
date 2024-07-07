@@ -1,5 +1,8 @@
 import { Switch } from "@headlessui/react";
 
+// Toggle component
+// Value: boolean
+// OnChange: Function to change the value
 export default function Toggle({
   value,
   onChange,

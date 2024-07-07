@@ -1,5 +1,9 @@
 "use server";
 
+// This file contains the actions that are used to fetch data from the server
+// We use the fetch API to make requests to the server
+
+// Fetch images from the server
 export const fetchImages = async () => {
   try {
     const response = await fetch(`http://localhost:3000/api/images`);
@@ -9,6 +13,9 @@ export const fetchImages = async () => {
   }
 };
 
+
+// Fetch image from the server
+// This could be used to fetch a single high resolution image by ID
 export const fetchImage = async (id: string) => {
   try {
     const response = await fetch(`http://localhost:3000/api/images/${id}`);
@@ -18,6 +25,7 @@ export const fetchImage = async (id: string) => {
   }
 };
 
+// Fetch annotations from the server
 export const fetchAnnotations = async () => {
   try {
     const response = await fetch(`http://localhost:3000/api/annotations/`);

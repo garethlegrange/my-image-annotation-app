@@ -1,3 +1,7 @@
+// Filter component to filter the list of items by category
+// categories: Array of categories
+// filter: Current filter value
+// setFilter: Function to set the filter value
 export default function Filter({
   categories,
   filter,

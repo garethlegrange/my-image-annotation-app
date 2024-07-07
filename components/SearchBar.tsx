@@ -1,3 +1,7 @@
+
+// SearchBar component
+// query: The search query value
+// setQuery: The function to set the search query
 export default function SearchBar({
   query,
   setQuery,

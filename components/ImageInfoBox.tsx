@@ -1,6 +1,8 @@
 import type { Image } from "@/types";
 import Card from "./Card";
 
+// Image information component
+// image: Image object
 export default function ImageInfoBox({ image }: { image: Image }) {
   return (
     <Card>

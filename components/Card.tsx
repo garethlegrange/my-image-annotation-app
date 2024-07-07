@@ -1,3 +1,4 @@
+// Card component with children
 export default function ImageInfoBox({
   children,
 }: {

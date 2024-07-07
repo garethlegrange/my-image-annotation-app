@@ -16,8 +16,13 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="flex flex-col gap-y-8 min-h-screen min-w-[900px] bg-gray-100">
+        {/* 
+          Providers is a custom component that wraps the entire application 
+          React query, React query devtools 
+        */}
         <Providers>
           <Header />
+          {/* The main content of the page */}
           <main className="container mx-auto">{children}</main>
         </Providers>
       </body>

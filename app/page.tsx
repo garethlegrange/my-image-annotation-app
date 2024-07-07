@@ -1,11 +1,7 @@
-import Link from "next/link";
+import { permanentRedirect } from "next/navigation";
 
-export default function HomePage() {
-  return (
-    <main>
-      <h1>Home page</h1>
-      <p>Could be login page</p>
-      <Link href="/images">Go to app</Link>
-    </main>
-  );
+export default function Home() {
+  // Redirect to the dashboard page for demonstration purposes
+  //  This could be a login page etc.
+  return permanentRedirect("/dashboard");
 }

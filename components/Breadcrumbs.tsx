@@ -1,5 +1,7 @@
 import Link from "next/link";
 
+// Breadcrumbs component
+// current: Current page/image name
 export default function Breadcrumbs({ current }: { current: string }) {
   return (
     <nav className="mb-6">
