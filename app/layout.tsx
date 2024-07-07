@@ -17,10 +17,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body>
+      <body className="flex flex-col gap-y-8 min-h-screen min-w-[900px]">
         <Providers>
           <Header />
-          <div>
+          <div className="container mx-auto grow flex gap-x-8">
             <SideBar />
             <main>{children}</main>
           </div>

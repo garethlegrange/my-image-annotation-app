@@ -1,4 +1,3 @@
 export default function Footer() {
-    return <footer>Footer</footer>;
-  }
-  
+  return <footer className="container mx-auto">Footer</footer>;
+}

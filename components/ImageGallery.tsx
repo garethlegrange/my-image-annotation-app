@@ -27,12 +27,12 @@ export default function ImageGallery({ images }: { images: Image[] }) {
             <figcaption>
               <h5 className="text-sm font-bold mb-1">{image.name}</h5>
               <p className="text-xs mb-2">{image.description}</p>
-              <ul className="text-xs flex justify-between">
-                <li>
-                  <strong>Created at:</strong> {image.created_at}
-                </li>
+              <ul className="text-xs">
                 <li>
                   <strong>Category:</strong> {image.category}
+                </li>
+                <li>
+                  <strong>Created at:</strong> {image.created_at}
                 </li>
               </ul>
             </figcaption>

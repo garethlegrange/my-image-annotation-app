@@ -9,6 +9,7 @@ import { Image } from "@/types";
 
 export default function ImagesPage() {
   const [query, setQuery] = useState<string>("");
+  const [filter, setFilter] = useState<string>("");
 
   const { data: images, isError, isPending } = useFetchImages();
 
@@ -20,27 +21,39 @@ export default function ImagesPage() {
     return <p>Error fetching images</p>;
   }
 
-  const filteredImages = images.filter(
-    (image: Image) =>
-      image.name.toLowerCase().includes(query.toLowerCase()) ||
-      image.description.toLowerCase().includes(query.toLowerCase()) ||
-      image.category.toLowerCase().includes(query.toLowerCase())
+  const categories = Array.from(
+    new Set(images.map((image: Image) => image.category))
   );
+
+  const filteredImages = images.filter((image: Image) => {
+    const nameMatch = image.name.toLowerCase().includes(query.toLowerCase());
+    const categoryMatch =
+      filter === "" || image.category.toLowerCase() === filter.toLowerCase();
+    return nameMatch && categoryMatch;
+  });
 
   return (
     <>
-      <h1>Images Page</h1>
+      <h1 className="text-3xl font-bold">Dashboard</h1>
 
       <div className="flex gap-x-4 mb-4">
         <SearchBar value={query} onChange={setQuery} />
-        <Filter />
+        <Filter value={filter} onChange={setFilter} categories={categories} />
       </div>
 
-      {query && (
-        <p className="transition-all duration-300 ease-in-out text-lg text-gray-600">
-          Searching for: <strong>{query}</strong>
-        </p>
-      )}
+      <p className="flex">
+        {query && (
+          <>
+            Searching for: <strong>{query}</strong>
+          </>
+        )}
+
+        {filter && (
+          <>
+            Filtering by: <strong>{filter}</strong>
+          </>
+        )}
+      </p>
 
       <ImageGallery images={filteredImages} />
 
