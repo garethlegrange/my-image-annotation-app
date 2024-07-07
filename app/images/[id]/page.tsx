@@ -25,9 +25,13 @@ export default function ImagePage({ params }: { params: { id: string } }) {
 
   const [showAnnotations, setShowAnnotations] = useState(true);
 
+  const [indvidualAnnotationToggle, setIndividualAnnotationToggle] = useState([]);
+
   const handleToggleAnnotations = () => {
     setShowAnnotations((prev) => !prev);
   };
+
+  const handleIndividualAnnotationToggle = () => {};
 
   if (imageError || annotationsError) {
     return <div>Error fetching image</div>;
@@ -50,7 +54,7 @@ export default function ImagePage({ params }: { params: { id: string } }) {
         <div>
           <ImageInfoBox image={image} />
           <AnnotationToggle value={showAnnotations} handler={handleToggleAnnotations} />
-          <AnnotationList annotations={annotations} />
+          <AnnotationList annotations={annotations} handler={handleIndividualAnnotationToggle} />
         </div>
       </div>
     </main>

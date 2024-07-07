@@ -2,8 +2,10 @@ import type { Annotation } from "@/types";
 
 export default function AnnotationList({
   annotations,
+  handler,
 }: {
   annotations: Annotation[];
+  handler: () => void;
 }) {
   return (
     <div>
@@ -15,6 +17,14 @@ export default function AnnotationList({
               <circle cx="8" cy="8" r="8" fill={annotation.color} />
             </svg>
             <span>{annotation.class_name}</span>
+            <label>
+              <input
+                type="checkbox"
+                value={annotation.class_uuid}
+                onChange={handler} 
+                title="Toggle annotation visibility"
+              />
+            </label>
           </li>
         ))}
       </ul>
