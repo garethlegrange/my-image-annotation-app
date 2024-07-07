@@ -16,4 +16,5 @@ export interface Annotation {
   w: number;
   x: number;
   y: number;
+  visible?: boolean | true
 }
