@@ -19,18 +19,18 @@ export default function ImagePage({ params }: { params: { id: string } }) {
   } = useFetchImage(id);
 
   const {
-    data: annotations,
+    data,
     isError: annotationsError,
     isPending: annotationsPending,
   } = useFetchAnnotations();
 
-  const { annotations: storeAnnotations, setAnnotations } = useStore();
+  const { annotations, setAnnotations } = useStore();
 
   useEffect(() => {
-    if (annotations) {
-      setAnnotations(annotations);
+    if (data) {
+      setAnnotations(data);
     }
-  }, [annotations, setAnnotations]);
+  }, [data, setAnnotations]);
 
   if (imageError || annotationsError) {
     return <div>Error fetching image</div>;
@@ -48,10 +48,10 @@ export default function ImagePage({ params }: { params: { id: string } }) {
         Please use the filters if needed to view the annotations.
       </p>
 
-      <div>Back button</div>
+      <Breadcrumbs current={image.name} />
 
-      <div className="flex gap-6 relative">
-        <ImageViewer image={image} annotations={storeAnnotations} />
+      <div className="relative grid grid-cols-3 gap-6 [&>*:first-child]:col-span-2">
+        <ImageViewer image={image} annotations={annotations} />
 
         <div className="flex flex-col gap-6 sticky top-6 self-start">
           <ImageInfoBox image={image} />

@@ -15,7 +15,8 @@ export default function Filter({
         value={filter}
         onChange={(e) => {
           setFilter(e.target.value);
-        }}
+        }} 
+        name="category"
       >
         <option value="">Filter by category</option>
         {categories.map((category) => (

@@ -23,9 +23,10 @@ export default function SearchBar({
         </svg>
       </div>
       <input
-        type="search"
-        className="block w-full p-3 ps-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500"
-        placeholder="Search images..."
+        type="search" 
+        name="search"
+        className="block w-full p-3 ps-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-slate-500 focus:border-slate-500"
+        placeholder="Search..."
         value={query}
         onChange={(e) => setQuery(e.target.value)}
       />

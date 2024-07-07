@@ -14,6 +14,7 @@ export default function ImageViewer({
   const { showAnnotations } = useStore();
 
   return (
+    <div className="self-start">
     <Card>
       <div className="relative">
         <Picture
@@ -42,5 +43,6 @@ export default function ImageViewer({
           ))}
       </div>
     </Card>
+    </div>
   );
 }
