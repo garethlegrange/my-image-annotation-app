@@ -7,6 +7,7 @@ import SearchBar from "@/components/SearchBar";
 import Filter from "@/components/Filter";
 import { Image } from "@/types";
 import Card from "@/components/Card";
+import Spinner from "@/components/Spinner";
 
 export default function ImagesPage() {
   // Local state for search and filter
@@ -18,7 +19,7 @@ export default function ImagesPage() {
 
   // Handle loading state
   if (isPending) {
-    return <p>Loading...</p>;
+    return <Spinner />;
   }
 
   // Handle error state if images fetch fails

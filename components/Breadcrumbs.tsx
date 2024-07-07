@@ -4,7 +4,7 @@ import Link from "next/link";
 // current: Current page/image name
 export default function Breadcrumbs({ current }: { current: string }) {
   return (
-    <nav className="mb-6">
+    <nav>
       <ol className="flex items-center space-x-3 *:flex *:items-center *:space-x-3">
         <li>
           <Link href="/" className="hover:text-indigo-600">
