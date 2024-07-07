@@ -2,8 +2,6 @@ import type { Metadata } from "next";
 import "@/styles/globals.css";
 import Providers from "@/components/Providers";
 import Header from "@/components/Header";
-import SideBar from "@/components/SideBar";
-import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
   title: "Image Annotation Viewer",
@@ -17,14 +15,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className="flex flex-col gap-y-8 min-h-screen min-w-[900px]">
+      <body className="flex flex-col gap-y-8 min-h-screen min-w-[900px] bg-gray-100">
         <Providers>
           <Header />
-          <div className="container mx-auto grow flex gap-x-8">
-            <SideBar />
-            <main>{children}</main>
-          </div>
-          <Footer />
+          <main className="container mx-auto">{children}</main>
         </Providers>
       </body>
     </html>

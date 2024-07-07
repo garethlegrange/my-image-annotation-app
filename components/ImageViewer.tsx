@@ -2,6 +2,7 @@ import Picture from "next/image";
 import type { Image, Annotation } from "@/types";
 import { useStore } from "@/store";
 import BoundingBox from "./BoundingBox";
+import Card from "./Card";
 
 export default function ImageViewer({
   image,
@@ -13,14 +14,16 @@ export default function ImageViewer({
   const { showAnnotations } = useStore();
 
   return (
-    <div className="border p-4">
+    <Card>
       <div className="relative">
         <Picture
           src={image.image_url}
           alt={image.alt}
-          width={500}
-          height={500}
+          width={0}
+          height={0}
+          sizes="100vw"
           priority
+          style={{ width: "100%", height: "auto" }}
         />
         {showAnnotations &&
           annotations.map((annotation) => (
@@ -38,6 +41,6 @@ export default function ImageViewer({
             />
           ))}
       </div>
-    </div>
+    </Card>
   );
 }

@@ -8,26 +8,28 @@ export default function ImageGallery({ images }: { images: Image[] }) {
   }
 
   return (
-    <div className="grid grid-cols-5 gap-4">
+    <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4">
       {images.map((image: Image) => (
         <Link
           key={image.id}
           href={`/images/${image.id}`}
-          className="block bg-gray-200 hover:bg-gray-300 transition-colors p-2 shadow-md cursor-pointer"
+          className="block max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100"
         >
-          <figure>
+          <figure className="flex flex-col h-full">
             <div className="relative aspect-square mb-2">
               <NextImage
                 src={image.image_url}
                 alt={image.alt}
-                layout="fill"
-                objectFit="cover"
+                sizes="100%"
+                fill 
+                priority 
+                className="object-cover"
               />
             </div>
-            <figcaption>
-              <h5 className="text-sm font-bold mb-1">{image.name}</h5>
-              <p className="text-xs mb-2">{image.description}</p>
-              <ul className="text-xs">
+            <figcaption className="grow flex flex-col">
+              <h5 className="mb-2 text-lg lg:text-2xl font-bold tracking-tight text-gray-900">{image.name}</h5>
+              <p className="font-normal text-gray-700 mb-2">{image.description}</p>
+              <ul className="text-xs text-gray-700 mt-auto">
                 <li>
                   <strong>Category:</strong> {image.category}
                 </li>

@@ -42,16 +42,20 @@ export default function ImagePage({ params }: { params: { id: string } }) {
 
   return (
     <main>
-      <h1 className="text-3xl font-bold">Image Page width {params.id}</h1>
+      <h1 className="text-3xl font-bold mb-2">Annotated image</h1>
+
+      <p className="mb-6">
+        Please use the filters if needed to view the annotations.
+      </p>
 
       <div>Back button</div>
 
       <Breadcrumbs />
 
-      <div className="flex">
+      <div className="flex gap-6 relative">
         <ImageViewer image={image} annotations={storeAnnotations} />
 
-        <div>
+        <div className="flex flex-col gap-6 sticky top-6 self-start">
           <ImageInfoBox image={image} />
           <AnnotationToggle />
           <AnnotationList />

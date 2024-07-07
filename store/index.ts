@@ -7,6 +7,7 @@ interface Store {
   showAnnotations: boolean;
   toggleAllAnnotations: () => void;
   toggleAnnotation: (class_uuid: string) => void;
+  searchAnnotations: (search: string) => void;
 }
 
 export const useStore = create<Store>((set) => ({
@@ -20,7 +21,15 @@ export const useStore = create<Store>((set) => ({
     }),
   showAnnotations: true,
   toggleAllAnnotations: () =>
-    set((state) => ({ showAnnotations: !state.showAnnotations })),
+    set((state) => {
+        const showAnnotations = !state.showAnnotations;
+        const annotations = state.annotations.map((annotation) => ({
+            ...annotation,
+            visible: showAnnotations,
+        }));
+    
+        return { showAnnotations, annotations };
+    }),
   toggleAnnotation: (class_uuid) => {
     set((state) => {
       const annotations = state.annotations.map((annotation) =>
@@ -28,6 +37,18 @@ export const useStore = create<Store>((set) => ({
           ? { ...annotation, visible: !annotation.visible }
           : annotation
       );
+
+      return { annotations };
+    });
+  },
+  searchAnnotations: (search) => {
+    set((state) => {
+      const annotations = state.annotations.map((annotation) => ({
+        ...annotation,
+        visible: annotation.class_name
+          .toLowerCase()
+          .includes(search.toLowerCase()),
+      }));
 
       return { annotations };
     });
