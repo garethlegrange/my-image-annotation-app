@@ -1,12 +1,13 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useFetchImage, useFetchAnnotations } from "@/hooks";
 import AnnotationList from "@/components/AnnotationList";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import ImageViewer from "@/components/ImageViewer";
 import ImageInfoBox from "@/components/ImageInfoBox";
 import AnnotationToggle from "@/components/AnnotationToggle";
+import { useStore } from "@/store";
 
 export default function ImagePage({ params }: { params: { id: string } }) {
   const { id } = params;
@@ -23,9 +24,19 @@ export default function ImagePage({ params }: { params: { id: string } }) {
     isPending: annotationsPending,
   } = useFetchAnnotations();
 
+  const { annotations: storeAnnotations, setAnnotations } = useStore();
+
+  useEffect(() => {
+    if (annotations) {
+      setAnnotations(annotations);
+    }
+  }, [annotations, setAnnotations]);
+
   const [showAnnotations, setShowAnnotations] = useState(true);
 
-  const [indvidualAnnotationToggle, setIndividualAnnotationToggle] = useState([]);
+  const [indvidualAnnotationToggle, setIndividualAnnotationToggle] = useState(
+    []
+  );
 
   const handleToggleAnnotations = () => {
     setShowAnnotations((prev) => !prev);
@@ -50,11 +61,15 @@ export default function ImagePage({ params }: { params: { id: string } }) {
       <Breadcrumbs />
 
       <div className="flex">
-        <ImageViewer image={image} annotations={showAnnotations ? annotations : []} />
+        <ImageViewer image={image} annotations={storeAnnotations} />
+
         <div>
           <ImageInfoBox image={image} />
-          <AnnotationToggle value={showAnnotations} handler={handleToggleAnnotations} />
-          <AnnotationList annotations={annotations} handler={handleIndividualAnnotationToggle} />
+          <AnnotationToggle />
+          {/* <AnnotationList
+            annotations={annotations}
+            handler={handleIndividualAnnotationToggle}
+          /> */}
         </div>
       </div>
     </main>

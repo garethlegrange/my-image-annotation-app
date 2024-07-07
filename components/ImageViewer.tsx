@@ -1,5 +1,6 @@
 import Picture from "next/image";
 import type { Image, Annotation } from "@/types";
+import { useStore } from "@/store";
 
 export default function ImageViewer({
   image,
@@ -8,6 +9,8 @@ export default function ImageViewer({
   image: Image;
   annotations: Annotation[];
 }) {
+  const { showAnnotations } = useStore();
+
   return (
     <div className="relative">
       <Picture
@@ -17,20 +20,21 @@ export default function ImageViewer({
         height={500}
         priority
       />
-      {annotations.map((annotation) => (
-        <div
-          key={annotation.class_uuid}
-          className="absolute border-2"
-          style={{
-            top: `${annotation.y * 100}%`,
-            left: `${annotation.x * 100}%`,
-            width: `${annotation.w * 100}%`,
-            height: `${annotation.h * 100}%`,
-            backgroundColor: annotation.color,
-            borderColor: annotation.color,
-          }}
-        ></div>
-      ))}
+      {showAnnotations &&
+        annotations.map((annotation) => (
+          <div
+            key={annotation.class_uuid}
+            className="absolute border-2"
+            style={{
+              top: `${annotation.y * 100}%`,
+              left: `${annotation.x * 100}%`,
+              width: `${annotation.w * 100}%`,
+              height: `${annotation.h * 100}%`,
+              backgroundColor: annotation.color,
+              borderColor: annotation.color,
+            }}
+          ></div>
+        ))}
     </div>
   );
 }

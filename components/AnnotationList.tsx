@@ -21,7 +21,7 @@ export default function AnnotationList({
               <input
                 type="checkbox"
                 value={annotation.class_uuid}
-                onChange={handler} 
+                onChange={handler}
                 title="Toggle annotation visibility"
               />
             </label>

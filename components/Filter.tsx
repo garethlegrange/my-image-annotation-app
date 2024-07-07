@@ -8,11 +8,9 @@ export default function Filter({
   categories: string[];
 }) {
   return (
-    <label htmlFor="cars">
+    <label>
       <span className="sr-only">Filter by:</span>
       <select
-        name="cars"
-        id="cars"
         className="block w-full rounded-md bg-gray-100 border-transparent focus:border-gray-500 focus:bg-white focus:ring-0"
         value={value}
         onChange={(e) => {
@@ -20,7 +18,7 @@ export default function Filter({
           onChange(e.target.value);
         }}
       >
-        <option value="">Filter by category</option>
+        <option value="">Please select</option>
         {categories.map((category: string) => (
           <option key={category} value={category}>
             {category}

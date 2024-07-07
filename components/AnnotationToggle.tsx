@@ -1,21 +1,13 @@
-export default function AnnotationToggle({
-  value,
-  handler,
-}: {
-  value: boolean;
-  handler: () => void;
-}) {
+import { useStore } from "@/store";
+import Toggle from "@/components/ui/Toggle";
+
+export default function AnnotationToggle() {
+  const { showAnnotations, toggleAllAnnotations } = useStore();
+
   return (
-    <div className="border p-4">
-      <h2>Annotation Toggle </h2>
-      <p>
-        {value
-          ? "Annotations are currently visible"
-          : "Annotations are currently hidden"}
-      </p>
-      <button type="button" onClick={handler}>
-        Toggle Annotations
-      </button>
+    <div className="flex items-center justify-between border p-4">
+      <p>{showAnnotations ? "Hide all annotations" : "Show all annotations"}</p>
+      <Toggle value={showAnnotations} onChange={toggleAllAnnotations} />
     </div>
   );
 }
