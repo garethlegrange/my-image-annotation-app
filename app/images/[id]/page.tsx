@@ -50,8 +50,6 @@ export default function ImagePage({ params }: { params: { id: string } }) {
 
       <div>Back button</div>
 
-      <Breadcrumbs />
-
       <div className="flex gap-6 relative">
         <ImageViewer image={image} annotations={storeAnnotations} />
 

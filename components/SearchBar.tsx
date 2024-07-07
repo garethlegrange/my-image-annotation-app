@@ -1,19 +1,19 @@
 export default function SearchBar({
-  value,
-  onChange,
+  query,
+  setQuery,
 }: {
-  value: string;
-  onChange: (value: string) => void;
+  query: string;
+  setQuery: (query: string) => void;
 }) {
   return (
-    <label htmlFor="search">
-      <span className="sr-only">Search images</span>
-      <div className="relative">
+    <label className="relative">
+      <span className="sr-only">Search</span>
+      <div className="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 20 20"
           fill="currentColor"
-          className="size-5 absolute top-1/2 left-3 transform -translate-y-1/2 pointer-events-none"
+          className="size-5"
         >
           <path
             fillRule="evenodd"
@@ -21,18 +21,14 @@ export default function SearchBar({
             clipRule="evenodd"
           />
         </svg>
-        <input
-          type="search"
-          placeholder="Search images"
-          className="block w-full pl-9 rounded-md bg-gray-100 border-transparent focus:border-gray-500 focus:bg-white focus:ring-0"
-          id="search"
-          value={value}
-          onChange={(e) => {
-            e.preventDefault();
-            onChange(e.target.value);
-          }}
-        />
       </div>
+      <input
+        type="search"
+        className="block w-full p-3 ps-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500"
+        placeholder="Search images..."
+        value={query}
+        onChange={(e) => setQuery(e.target.value)}
+      />
     </label>
   );
 }

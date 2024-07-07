@@ -1,25 +1,24 @@
 export default function Filter({
-  value,
-  onChange,
   categories,
+  filter,
+  setFilter,
 }: {
-  value: string;
-  onChange: (value: string) => void;
   categories: string[];
+  filter: string;
+  setFilter: (filter: string) => void;
 }) {
   return (
-    <label>
-      <span className="sr-only">Filter by:</span>
+    <label className="block">
+      <span className="sr-only">Select an category</span>
       <select
-        className="block w-full rounded-md bg-gray-100 border-transparent focus:border-gray-500 focus:bg-white focus:ring-0"
-        value={value}
+        className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-3"
+        value={filter}
         onChange={(e) => {
-          e.preventDefault();
-          onChange(e.target.value);
+          setFilter(e.target.value);
         }}
       >
-        <option value="">Please select</option>
-        {categories.map((category: string) => (
+        <option value="">Filter by category</option>
+        {categories.map((category) => (
           <option key={category} value={category}>
             {category}
           </option>

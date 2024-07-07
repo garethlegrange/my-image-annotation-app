@@ -11,20 +11,6 @@ interface galleryStore {
 export const useGalleryStore = create<galleryStore>((set) => ({
   images: [],
   setImages: (images) => set({ images }),
-  searchImages: (search) => {
-    set((state) => {
-      console.log("searching images", search);
-
-      if (!search.trim()) {
-        return { images: state.images };
-      }
-
-      const filtered = state.images.filter((image) =>
-        image.name.toLowerCase().includes(search.toLowerCase())
-      );
-
-      return { images: filtered };
-    });
-  },
+  searchImages: (search) => {},
   filterImages: (filter) => {},
 }));

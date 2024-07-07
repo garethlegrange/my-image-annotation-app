@@ -1,6 +1,6 @@
 export default function Header() {
   return (
-    <header className="bg-slate-900 text-white">
+    <header className="bg-slate-900 text-white py-3 p-3 xl:px-0">
       <div className="container mx-auto flex items-center justify-between">
         <div className="flex items-center gap-x-2">
           <svg
@@ -24,22 +24,6 @@ export default function Header() {
           </svg>
           <span className="text-sm">Image Annotation Viewer</span>
         </div>
-
-        {/* <button type="button" className="md:hidden">
-          <svg
-            className="h-6 w-6"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M4 6h16M4 12h16M4 18h16"
-            />
-          </svg>
-        </button> */}
       </div>
     </header>
   );
