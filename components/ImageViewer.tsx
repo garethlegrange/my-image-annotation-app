@@ -44,7 +44,8 @@ export default function ImageViewer({
                   backgroundColor: annotation.color,
                   borderColor: annotation.color,
                   visibility: annotation.visible ? "visible" : "hidden",
-                }}
+                }} 
+                title={annotation.class_name}
               />
             ))}
         </div>
