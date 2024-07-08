@@ -1,7 +1,7 @@
 export default function Header() {
   return (
     <header className="bg-slate-900 text-white py-3 p-3 xl:px-0">
-      <div className="container mx-auto flex items-center justify-between">
+      <div className="container mx-auto flex items-center justify-between px-6">
         <div className="flex items-center gap-x-2">
           <svg
             xmlns="http://www.w3.org/2000/svg"

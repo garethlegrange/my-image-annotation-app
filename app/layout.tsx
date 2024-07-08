@@ -23,7 +23,7 @@ export default function RootLayout({
         <Providers>
           <Header />
           {/* The main content of the page */}
-          <main className="container mx-auto mb-6">{children}</main>
+          <main className="container mx-auto mb-6 px-6">{children}</main>
         </Providers>
       </body>
     </html>
