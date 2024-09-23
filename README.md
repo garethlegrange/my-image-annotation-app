@@ -30,7 +30,7 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 - `/app`: App router pages and layouts
 - `/app/api`: Custom API routes for returning JSON data
 - `/components`: Reusable components
-- `/ui`: Reusable elements
+- `/components/ui`: Reusable elements
 - `/data`: JSON data files
 - `/hooks`: Custom hooks for data fetching and state management
 - `/public`: Static assets
